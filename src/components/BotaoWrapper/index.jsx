@@ -5,7 +5,6 @@ function importAll(r) {
 }
 
 const images = importAll(require.context('../../mockups/botoes', false, /\.(png|jpe?g|svg)$/));
-console.log(images)
 
 export default function BotaoWrapper ({ImgName, ImgDesc = ""}) {
     return (
