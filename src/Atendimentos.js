@@ -1,5 +1,4 @@
 import BotaoWrapper from "./components/BotaoWrapper";
-import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Body from './components/Body'
 import DelayedLinkWithFadeout from "./components/utils/DelayedLinkWithFadeout";

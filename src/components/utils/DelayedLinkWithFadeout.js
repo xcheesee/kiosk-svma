@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { OpacityContext } from '../utils/opacity';
+import { OpacityContext } from './opacity';
 
 export default function DelayedLinkWithFadeout ({ delay, replace, state, to, setOpacity, ...props }) {
     const navigate = useNavigate();

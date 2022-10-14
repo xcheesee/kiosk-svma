@@ -1,9 +1,6 @@
-import { Link, useNavigate } from 'react-router-dom';
-import './App.css';
-import footerLogo from './mockups/SVMA.png'
+// import './App.css';
 import Header from './components/Header';
 import Body from './components/Body';
-import { useRef, useEffect } from 'react';
 import DelayedLinkWithFadeout from './components/utils/DelayedLinkWithFadeout';
 
 function App() {
