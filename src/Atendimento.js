@@ -1,10 +1,9 @@
 import { useLocation } from "react-router-dom";
-import DefaultLayout from "./DefaultLayout";
 import SolicitOptions from "./SolicitOptions";
 import Header from './components/Header'
 import Body from "./components/Body";
 
-export default function Atendimento () {
+export default function Atendimento ({opacity, setOpacity}) {
     const atendimentoData = useLocation()
     
     return (
@@ -14,20 +13,14 @@ export default function Atendimento () {
             </Header>
             <Body
                 desc={'Clique na opcao desejada'}
-            >   
+                opacity={opacity}
+                setOpacity={setOpacity}
+            >
                 <SolicitOptions
                     options={atendimentoData.state.servicos}
+                    setOpacity={setOpacity}
                 />
             </Body>
         </>
-
-        // <DefaultLayout
-        //     header={atendimentoData.state.opcao}
-        // >
-        //     <p className="pt-10 text-4xl">Clique na opcao desejada:</p>
-        //     <SolicitOptions
-        //         options={atendimentoData.state.servicos}
-        //     />
-        // </DefaultLayout>
     )
 }

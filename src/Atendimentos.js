@@ -1,10 +1,10 @@
-import DefaultLayout from "./DefaultLayout";
 import BotaoWrapper from "./components/BotaoWrapper";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Body from './components/Body'
+import DelayedLinkWithFadeout from "./components/utils/DelayedLinkWithFadeout";
 
-const Atendimentos = () => {
+const Atendimentos = ({opacity, setOpacity}) => {
 
     const atendimentos = [
         {
@@ -84,12 +84,14 @@ const Atendimentos = () => {
             </Header>
             <Body
                 desc={'Clique na opcao desejada:'}
+                opacity={opacity}
+                setOpacity={setOpacity}
             >
                 <div className="grid grid-cols-[max-content_max-content_max-content_max-content_max-content] gap-4">
                     {
                         atendimentos
                             .map(atendimento =>
-                            <Link
+                            <DelayedLinkWithFadeout
                                 to={atendimento.servicos.length !== 0 ? 'pog' : '/solicitacao'}
                                 state={
                                     {
@@ -97,18 +99,18 @@ const Atendimentos = () => {
                                         servicos: atendimento.servicos,
                                         links: atendimento.links,
                                 }}
+                                setOpacity={setOpacity}
+                                delay={1000}
                             >
                                     <BotaoWrapper
                                         ImgName={atendimento.foto}
                                         servicos={atendimento.servicos}
                                     />
-                            </Link>)
+                            </DelayedLinkWithFadeout>)
                     }
                 </div>
             </Body>
         </>
-            
-        // </DefaultLayout>
     )
 }
 

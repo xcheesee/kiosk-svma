@@ -1,9 +1,8 @@
 import BotaoWrapper from "./components/BotaoWrapper"
-import DefaultLayout from "./DefaultLayout"
 import Header from "./components/Header"
 import Body from "./components/Body"
 
-export default function Encerrado () {
+export default function Encerrado ({opacity, setOpacity}) {
     return (
         <>
             <Header>
@@ -11,6 +10,8 @@ export default function Encerrado () {
             </Header>
             <Body
                 desc={'Apos encerrar, clique no botao para encerrar o atendimento'}
+                opacity={opacity}
+                setOpacity={setOpacity}
             >
                 <div className="flex justify-center">
                     <BotaoWrapper ImgName={'EncerraAtendimento.png'} />
