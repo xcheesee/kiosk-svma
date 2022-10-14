@@ -11,7 +11,7 @@ export default function SolicitOptions ({options, setOpacity}) {
             >
                 <div>
                     <button
-                        className="py-1.5 text-4xl shadow-xl px-4 transition-colors bg-[#c30] border active:bg-[#a32900] border-[#a32900] text-white rounded-lg font-bold disabled:opacity-50"
+                        className="py-1.5 text-4xl shadow-xl px-4 transition-colors bg-[#c30] border active:bg-[#a32900] border-[#661a00] text-white rounded-lg font-bold disabled:opacity-50"
                     >
                         {option}
                     </button>

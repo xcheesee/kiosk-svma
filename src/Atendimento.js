@@ -12,7 +12,7 @@ export default function Atendimento ({opacity, setOpacity}) {
                 {atendimentoData.state.opcao}
             </Header>
             <Body
-                desc={'Clique na opcao desejada'}
+                desc={'Clique na opcao desejada:'}
                 opacity={opacity}
                 setOpacity={setOpacity}
             >
