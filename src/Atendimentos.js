@@ -1,6 +1,8 @@
 import DefaultLayout from "./DefaultLayout";
 import BotaoWrapper from "./components/BotaoWrapper";
 import { Link } from "react-router-dom";
+import Header from "./components/Header";
+import Body from './components/Body'
 
 const Atendimentos = () => {
 
@@ -76,30 +78,37 @@ const Atendimentos = () => {
     ]
 
     return (
-        <DefaultLayout
-            header={<>Terminal de <strong>Atendimento</strong></>}
-        >
-            <p className="py-10 text-4xl">Clique na opcao desejada:</p>
-                    <div className="grid grid-cols-[max-content_max-content_max-content_max-content_max-content] gap-4">
-                        {
-                            atendimentos.map(atendimento => 
-                                <Link 
-                                    to={atendimento.servicos.length !== 0 ? 'pog' : '/solicitacao'} 
-                                    state={
-                                        {
-                                            opcao: atendimento.opcao,
-                                            servicos: atendimento.servicos,
-                                            links: atendimento.links,
-                                    }}
-                                >
-                                        <BotaoWrapper
-                                            ImgName={atendimento.foto}
-                                            servicos={atendimento.servicos}
-                                        />
-                                </Link>)
-                        }
-                    </div>  
-        </DefaultLayout>
+        <>
+            <Header>
+                Terminal de <strong>Atendimento</strong>
+            </Header>
+            <Body
+                desc={'Clique na opcao desejada:'}
+            >
+                <div className="grid grid-cols-[max-content_max-content_max-content_max-content_max-content] gap-4">
+                    {
+                        atendimentos
+                            .map(atendimento =>
+                            <Link
+                                to={atendimento.servicos.length !== 0 ? 'pog' : '/solicitacao'}
+                                state={
+                                    {
+                                        opcao: atendimento.opcao,
+                                        servicos: atendimento.servicos,
+                                        links: atendimento.links,
+                                }}
+                            >
+                                    <BotaoWrapper
+                                        ImgName={atendimento.foto}
+                                        servicos={atendimento.servicos}
+                                    />
+                            </Link>)
+                    }
+                </div>
+            </Body>
+        </>
+            
+        // </DefaultLayout>
     )
 }
 
