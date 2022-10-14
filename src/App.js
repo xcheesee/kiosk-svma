@@ -6,7 +6,7 @@ import Body from './components/Body';
 import { useRef, useEffect } from 'react';
 import DelayedLinkWithFadeout from './components/utils/DelayedLinkWithFadeout';
 
-function App({opacity, setOpacity}) {
+function App() {
   // const DelayedLink = ({ delay, replace, state, to, ...props }) => {
   //   const navigate = useNavigate();
   //   const timerRef = useRef();
@@ -23,13 +23,11 @@ function App({opacity, setOpacity}) {
   // };
 
   return (
-    <DelayedLinkWithFadeout to="atendimento" setOpacity={setOpacity} delay={1000}>
+    <DelayedLinkWithFadeout to="atendimento" delay={1000}>
       <Header>
         Terminal de <strong>Atendimento</strong>
       </Header>
       <Body
-        opacity={opacity}
-        setOpacity={setOpacity}
         subHeader={'Seja bem vindo(a)!'}
         desc={'Clique na tela para iniciar'}
       />

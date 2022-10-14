@@ -3,7 +3,7 @@ import SolicitOptions from "./SolicitOptions";
 import Header from './components/Header'
 import Body from "./components/Body";
 
-export default function Atendimento ({opacity, setOpacity}) {
+export default function Atendimento () {
     const atendimentoData = useLocation()
     
     return (
@@ -13,12 +13,9 @@ export default function Atendimento ({opacity, setOpacity}) {
             </Header>
             <Body
                 desc={'Clique na opcao desejada:'}
-                opacity={opacity}
-                setOpacity={setOpacity}
             >
                 <SolicitOptions
                     options={atendimentoData.state.servicos}
-                    setOpacity={setOpacity}
                 />
             </Body>
         </>

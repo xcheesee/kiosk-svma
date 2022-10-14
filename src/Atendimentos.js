@@ -99,7 +99,6 @@ const Atendimentos = ({opacity, setOpacity}) => {
                                         servicos: atendimento.servicos,
                                         links: atendimento.links,
                                 }}
-                                setOpacity={setOpacity}
                                 delay={1000}
                             >
                                     <BotaoWrapper
